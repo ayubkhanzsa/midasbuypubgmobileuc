@@ -1,0 +1,220 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply text-white rounded-md bg-midasbuy-blue hover:bg-midasbuy-blue/80 transition-colors;
+  }
+  .btn-secondary {
+    @apply text-white rounded-md bg-midasbuy-navy border border-gray-700 hover:border-midasbuy-blue/60 transition-colors;
+  }
+}
+
+/* Blue corner light effect */
+.corner-light-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle at 0 0, rgba(51, 195, 240, 0.15) 0%, rgba(10, 19, 40, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hide scrollbar for all browsers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Banner container styles */
+.banner-container {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.banner-container img {
+  width: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Universal styles for all devices (mobile, tablet, and desktop) */
+body {
+  background-color: #0A1629 !important;
+}
+
+/* Mobile header styling for all devices */
+.mobile-header-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background-image: url('/lovable-uploads/ecf1d771-bf68-434d-b45e-edaa57d5a153.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Add overlay for better text visibility across all devices */
+.mobile-header-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(to bottom, rgba(10, 22, 41, 0.2) 0%, rgba(10, 22, 41, 0.5) 50%, #0A1629 100%);
+  z-index: 1;
+}
+
+/* Ensure content is above the banner on all devices */
+.mobile-content {
+  position: relative;
+  z-index: 5;
+  padding-top: 4rem;
+}
+
+/* Adjust header for all devices so it appears over the banner */
+.mobile-header {
+  position: relative;
+  z-index: 10;
+  background: transparent !important;
+}
+
+/* Force all content to be on top of the background on all devices */
+.mobile-main-container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Adjust title styling for consistency */
+.mobile-pubg-title {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Adjust icon on all devices */
+.mobile-pubg-icon {
+  width: 28px;
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+  .mobile-pubg-title {
+    font-size: 1.75rem;
+  }
+  
+  .corner-light-effect {
+    width: 50%;
+    height: 35%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobile-pubg-title {
+    font-size: 2rem;
+  }
+}
+
+body {
+  background: linear-gradient(to bottom, #0a1e4c, #051238) !important;
+}
+
+.min-h-screen.bg-midasbuy-darkBlue {
+  background: linear-gradient(to bottom, #0a1e4c, #051238) !important;
+}
